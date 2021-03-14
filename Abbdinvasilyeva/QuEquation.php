@@ -16,7 +16,7 @@ Class QuEquation extends Equation implements EquationInterface{
 	    if($a == 0){
 	        return $this->li_solve($b,$c);
 	    }
-
+        MyLog::log("определено, что это квадратное уравнение");
 		if ($x > 0){
 		    return $this->X=array(
 		        (-$b+sqrt($x))/(2*$a),
@@ -28,7 +28,7 @@ Class QuEquation extends Equation implements EquationInterface{
 			return $this->X=array(-($b/(2*$a)));
 		}
 
-		throw new Exception("ошибка: уравнение не имеет корней.");
+		throw new abbdinvasilyevaException("ошибка: уравнение не имеет корней.");
 		
 	}
 	
