@@ -13,7 +13,7 @@ Class MyLog extends LogAbstract implements LogInterface {
     /**
      * @param String $str строка для записи в массив лога
      */
-    public static function log(String $str){
+    public static function log(String $str): void {
         self::Instance()->_log($str);
 	}
     
@@ -22,10 +22,17 @@ Class MyLog extends LogAbstract implements LogInterface {
         foreach($this->log as $value){
             echo $value."\n";
         }
+        $d = new \DateTime();
+        $file = "./Log/". $d->format('d-m-Y\TH_i_s_u').".log";
+        if (!is_dir('./Log/'))
+        {
+            mkdir("./Log/");
+        }
+        file_put_contents($file, $this->log);
         
     }
     
-    public static function write(){
+    public static function write(): void {
         self::Instance()->_write();
     }
 
