@@ -3,17 +3,9 @@
 ini_set("display_errors", 1);
 error_reporting(-1);
 
-use Abbdinvasilyeva\MyLog;
-use Abbdinvasilyeva\AbbdinvasilyevaException;
-use Abbdinvasilyeva\QuEquation;
+require __DIR__.'/vendor/autoload.php';
+$equation = new mdk0203\QuEquationTest();
 
-require_once "core\core\EquationInterface.php";
-require_once "core\core\LogAbstract.php";
-require_once "core\core\LogInterface.php";
-require_once "Abbdinvasilyeva\MyLog.php";
-require_once "Abbdinvasilyeva\Equation.php";
-require_once "Abbdinvasilyeva\QuEquation.php";
-require_once "Abbdinvasilyeva\AbbdinvasilyevaException.php";
 
 try {
     Abbdinvasilyeva\MyLog::log("Version: " . trim(file_get_contents("version")) . "\n");
