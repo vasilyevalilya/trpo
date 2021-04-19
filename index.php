@@ -7,13 +7,7 @@ use Abbdinvasilyeva\MyLog;
 use Abbdinvasilyeva\AbbdinvasilyevaException;
 use Abbdinvasilyeva\QuEquation;
 
-require_once "core\core\EquationInterface.php";
-require_once "core\core\LogAbstract.php";
-require_once "core\core\LogInterface.php";
-require_once "Abbdinvasilyeva\MyLog.php";
-require_once "Abbdinvasilyeva\Equation.php";
-require_once "Abbdinvasilyeva\QuEquation.php";
-require_once "Abbdinvasilyeva\AbbdinvasilyevaException.php";
+require_once "vendor/autoload.php";
 
 try {
     Abbdinvasilyeva\MyLog::log("Version: " . trim(file_get_contents("version")) . "\n");
